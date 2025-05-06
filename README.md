@@ -1,7 +1,5 @@
-# Big Data Tools and Techniques
-## Final Project
-## Dylan Long
-### 5/6/25
+# Big Data Tools and Techniques - Final Project
+## Contributors: Dylan Long
 
 ## To run the scripts on the data, the data must be downloaded from my Drive or from the link below due to GitHub file size restrictions:
 ### https://drive.google.com/file/d/1cDupbjVcnwEgioxcnJOGyKVetTSlacB9/view?usp=drive_link
@@ -40,4 +38,4 @@
         - silver_layer.py
         - gold_layer.py
         - preprocessing.py
-        - models.py# US-Homes-Price-Prediction
+        - models.py
