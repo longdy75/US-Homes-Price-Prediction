@@ -1,0 +1,12 @@
+Have installed:
+
+Java JDK
+
+Required Dependencies:
+numpy
+pandas
+scikit-learn
+xgboost
+pyspark
+spark
+toml

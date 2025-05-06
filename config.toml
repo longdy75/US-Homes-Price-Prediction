@@ -1,0 +1,11 @@
+[spark]
+app_name = "RealEstateAnalysis"
+master = "local[*]"
+executor_memory = "4g"
+driver_memory = "2g"
+
+[env]
+java_home = "C:\\Program Files\\Java\\jdk-17"
+hadoop_home = "C:\\hadoop"
+spark_home = "C:\\Users\\HomePC\\Downloads\\spark-3.5.5-bin-hadoop3"
+hadoop_user = "HomePC"

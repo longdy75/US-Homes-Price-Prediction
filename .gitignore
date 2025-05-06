@@ -1,0 +1,4 @@
+venv/
+scripts/__pycache__/
+scripts/df_data/
+dataset/us_houses.csv
