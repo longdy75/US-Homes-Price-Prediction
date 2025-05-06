@@ -1,4 +1,4 @@
-# Big Data Tools and Techniques - Final Project
+# US Housing Price Predictions (600,000 rows)
 ## Contributors: Dylan Long
 
 ## To run the scripts on the data, the data must be downloaded from my Drive or from the link below due to GitHub file size restrictions:
