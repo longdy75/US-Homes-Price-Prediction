@@ -9,7 +9,7 @@
 
 ### This is a repository consisting of a public US housing dataset from Kaggle that can be found here: https://www.kaggle.com/datasets/polartech/500000-us-homes-data-for-sale-properties
 
-### The enclosed scripts utilizes Apaches Spark to store, clean, and transform the data for ML modeling with Pandas.
+### The enclosed scripts utilize Apache Spark to store, clean, and transform the data for ML modeling with Pandas.
 
 #### Aggregated Features:
     - price_per_land_space_unit (Check unit column to identify sqft/acre) (Standardized during preprocessing)
@@ -19,7 +19,7 @@
     - avg_price_by_city
     - avg_price_by_state
 
-#### Initial modeling with Linear Regression performed poorly indicating that relationships are non-linear and complicated.
+#### Initial modeling with Linear Regression yielded poor results, suggesting that the underlying relationships are complex and non-linear.
 #### Switched to HistGradientBoosting for better performance.
 
 #### Modeling Outcomes (Target Variable: Price):
