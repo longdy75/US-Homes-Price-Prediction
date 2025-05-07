@@ -35,8 +35,8 @@ df_price_by_state = df_imputed.groupBy("state").agg(avg("price").alias("avg_pric
 
 # Merge back to DataFrame
 df_imputed = df_imputed.join(df_price_by_postcode, "postcode", "left") \
-                       .join(df_price_by_city, "city", "left")\
-                       .join(df_price_by_state, "state", "left")
+                        .join(df_price_by_city, "city", "left")\
+                        .join(df_price_by_state, "state", "left")
 
 print(f"\nFinished Aggregation.\n")
 df_imputed.show(10)
@@ -51,7 +51,7 @@ df_land_price_median_by_type = df_imputed.groupBy("property_type").agg(
 )
 
 df_imputed = df_imputed.join(df_land_price_median_by_type, "property_type", "left") \
-                       .withColumn("price_per_land_space_unit", coalesce(col("price_per_land_space_unit"), col("median_price_per_sqft_type")))
+                        .withColumn("price_per_land_space_unit", coalesce(col("price_per_land_space_unit"), col("median_price_per_sqft_type")))
 
 df_imputed = df_imputed.drop("median_price_per_sqft_type")
 

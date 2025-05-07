@@ -1,9 +1,10 @@
 
 from sklearn.cluster import KMeans
+from spark_setup import spark
 import os
 import numpy as np
 import pandas as pd
-from spark_setup import spark
+
 
 # Ensure output directory exists
 output_dir = "./df_data"
@@ -38,10 +39,6 @@ print(f"\nStandardized land_space to sqft.")
 # Ensure non-negative living_space and land_space_sqft
 df_pandas['living_space'] = df_pandas['living_space'].clip(lower=0)
 df_pandas['land_space_sqft'] = df_pandas['land_space_sqft'].clip(lower=0)
-
-# Check for negative values
-#print("Negative living_space:", (df_pandas['living_space'] < 0).sum())
-#print("Negative land_space_sqft:", (df_pandas['land_space_sqft'] < 0).sum())
 
 # Handle zero bedroom_number to avoid division-by-zero
 df_pandas['bedroom_number'] = df_pandas['bedroom_number'].replace(0, 1)

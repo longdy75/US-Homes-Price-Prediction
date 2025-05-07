@@ -20,17 +20,22 @@ model_xgb_path = f"{output_dir}/model_xgb.joblib"
 # Read pickle
 df_pandas = pd.read_pickle(input_path)
 
-# Define feature columns
+# --- Define feature columns ---
+
+# From previous encoding
 property_type_cols = ['property_type_CONDO', 'property_type_MANUFACTURED', 
-                      'property_type_SINGLE_FAMILY', 'property_type_APARTMENT','property_type_TOWNHOUSE']
+                    'property_type_SINGLE_FAMILY', 'property_type_APARTMENT','property_type_TOWNHOUSE']
 print(f"\nproperty_type columns:")
 print(property_type_cols)
 
+# From previous encoding 
 state_cols = [col for col in df_pandas.columns if col.startswith('state_')]
 print(f"\nState Columns:")
 print(state_cols)
 
+# From previous kmeans clustering
 cluster_cols = [col for col in df_pandas.columns if col.startswith('cluster_')]
+
 feature_cols = [
     'bathroom_number', 'living_space_log', 'land_space_sqft_log',
     'latitude', 'longitude', 'living_space_per_bedroom', 'bedroom_number',
@@ -103,7 +108,7 @@ param_grid_xgb = {
     'learning_rate': [0.01, 0.1]
 }
 grid_search_xgb = GridSearchCV(xgb.XGBRegressor(objective='reg:squarederror', random_state=42),
-                               param_grid_xgb, cv=3, scoring='r2', n_jobs=-1)
+                                param_grid_xgb, cv=3, scoring='r2', n_jobs=-1)
 grid_search_xgb.fit(X_train, y_train)
 model_xgb = grid_search_xgb.best_estimator_
 y_pred_log_xgb = model_xgb.predict(X_test)
